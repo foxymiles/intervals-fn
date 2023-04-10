@@ -360,7 +360,7 @@ export const intersect = <T extends IntervalSE>(
   ]).filter(i => i != null) as T[];
 };
 
-const minStart = (ranges: roat<IntervalSE>) => ranges.reduce((a, b) => (a.start < b.start ? a : b));
+const minStart = (ranges: roat<IntervalSE>) => ranges.reduce((a, b) => (a.start < b.start ? a : b), ranges[0]);
 
 const mergeUnfolder = (mergeFn: (ints: any[]) => any) => (
   ints: roat<IntervalSE>
